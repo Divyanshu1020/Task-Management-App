@@ -7,7 +7,7 @@ import {
   Routes,
 } from "react-router-dom";
 import TodoList from './Components/TodoList/TodoList';
-import Welcome from './Components/Welcome/Welcome';
+// import Welcome from './Components/Welcome/Welcome';
 
 function App() {
 
@@ -15,10 +15,11 @@ function App() {
   return (
     <BrowserRouter>
       <div className='App'>
-        <Routes>
+        {/* <Routes>
           <Route path='/todo' element={<TodoList />} />
           <Route path='/' element={<Welcome/>} />
-        </Routes>
+        </Routes> */}
+        <TodoList />
       </div>
     </BrowserRouter>
 

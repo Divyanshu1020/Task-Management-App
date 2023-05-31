@@ -9,8 +9,10 @@
 .App{
   width: 100%;
   max-width: 500px;
-  min-height: 550px;
+  max-height: 650px;
+  height: 100vh;
   margin: 50px auto;
+  border: 1px solid black;
   box-shadow: 0 2px 6px #555;
   padding: 50px;
 
