@@ -12,6 +12,7 @@ export default function Task({ todo, id,taskComplete }) {
             <label htmlFor={id} className={todo.complete ? "active":""}>
 
                 <input
+                    className='checkbox'
                     type="checkbox"
                     id={id}
                     checked={todo.complete}

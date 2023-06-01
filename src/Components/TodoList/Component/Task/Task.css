@@ -14,3 +14,7 @@ li .active{
     opacity: 0.5;
     text-decoration: line-through;
 }
+
+.checkbox{
+    margin-right: 5px;
+}

@@ -6,6 +6,7 @@ export default function Footer() {
     <div className='row'>
       <label htmlFor="all">
         <input
+          className='checkbox'
           type="checkbox"
           name='all'
           id='all' />
