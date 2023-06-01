@@ -12,6 +12,7 @@ export default function TaskList() {
         todo.complete = !todo.complete;
       }
       setTodos(newTodo)
+       localStorage.setItem('taskStorage', JSON.stringify(newTodo))
     }
     )
   }
