@@ -9,8 +9,9 @@ export default function Header() {
 
   const addData = (e) => {
     e.preventDefault();
-    setTodos([...todos, { name: task, complete: false }])
-    localStorage.setItem('taskStorage', JSON.stringify(todos))
+    const newTodoAdd = [...todos, { name: task, complete: false }]
+    setTodos(newTodoAdd)
+    localStorage.setItem('taskStorage', JSON.stringify(newTodoAdd))
     setTask("")
   }
   return (
