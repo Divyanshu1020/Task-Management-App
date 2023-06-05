@@ -1,17 +1,28 @@
 import React, { useState } from 'react'
 import './Task.css'
 
-export default function Task({ todo, id,taskComplete, taskNewValue }) {
+export default function Task({ todo, id,taskComplete, taskNewValue,deleteFunction }) {
     const[editButtonOn ,setEditButtonOn] = useState(false)  
-    const[editValue, setEditValue] = useState("")
+    const[editValue, setEditValue] = useState(todo.name)
+    // When you click on save button this function run 
     const saveButtonHandler=(id)=>{
-        taskNewValue(id,editValue);
+        if(editValue){
+            taskNewValue(id,editValue);
+        }else{
+            setEditValue(todo.name)
+        }
         setEditButtonOn(false)
     }
+    // When you click on edit button 
     const editButtonHandler=()=>{
         setEditButtonOn(true)
     }
+
+
+
+   
     if (editButtonOn) {
+         // If edit button is ON than this function is run and edit functionlity OPEN
         return (
             <li>
                 <input
@@ -21,7 +32,7 @@ export default function Task({ todo, id,taskComplete, taskNewValue }) {
                     onChange={e => setEditValue( e.target.value )}
 
                 />
-                <button onClick={()=>saveButtonHandler(id)} >Save</button>
+                <button className='onSave' onClick={()=>saveButtonHandler(id)} >Save</button>
             </li>
         )
     }
@@ -34,11 +45,15 @@ export default function Task({ todo, id,taskComplete, taskNewValue }) {
                     type="checkbox"
                     id={id}
                     checked={todo.complete}
-                    onChange={() => taskComplete(id)}
+                    onChange={() => taskComplete(id)} // taskComplete come as a prop
                 />
                 {todo.name}
             </label>
-            <button disabled={todo.complete} onClick={editButtonHandler}>Edit</button>
+            <button 
+                className={todo.complete ? "delete" : "onEdit"}  
+                onClick={()=>{todo.complete ? deleteFunction() : editButtonHandler()}}>
+                    {todo.complete ? "Delete" : "Edit"}
+            </button>
         </li>
     )
 }

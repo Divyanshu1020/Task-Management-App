@@ -5,6 +5,8 @@ import { DataContext } from './DataProvider/DataProvider'
 
 export default function TaskList() {
   const [todos, setTodos] = useContext(DataContext)
+
+  // When you click on checkbox, make task complete ture
   const taskComplete = (id) => {
     const newTodo = [...todos];
     newTodo.forEach((todo, index) => {
@@ -17,6 +19,7 @@ export default function TaskList() {
     )
   }
 
+  // Add new value to todos
   const taskNewValue=(id,editValue)=>{
     const newTodo = [...todos];
     newTodo.forEach((todo, index) =>{
@@ -29,6 +32,17 @@ export default function TaskList() {
     )
   }
   
+  // simple delete function 
+  const deleteFunction =()=>{
+    const newTodo = todos.filter(todo => {
+      if(!todo.complete){
+        return todo
+      }
+    
+    })
+
+    setTodos(newTodo)
+  }
   return (
     <ul>
       {
@@ -38,7 +52,9 @@ export default function TaskList() {
             key={index}
             id={index}
             taskComplete={taskComplete}
-            taskNewValue={taskNewValue} />
+            taskNewValue={taskNewValue}
+            deleteFunction={deleteFunction}
+             />
         ))
 
       }

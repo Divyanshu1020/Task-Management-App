@@ -29,5 +29,6 @@ form button {
     letter-spacing: 2px;
     cursor: pointer;
     padding: 0 10px;
+    border: none;
     
 }

@@ -13,6 +13,26 @@ li{
 li .active{
     opacity: 0.5;
     text-decoration: line-through;
+
+}
+li .delete{
+    background-color: #dc0505;
+    letter-spacing: 0;
+}
+
+li button {
+    border: none;
+    color: white;
+    letter-spacing: 2px;
+    cursor: pointer;
+    padding: 5px 10px;
+    width: 60px;
+}
+.onEdit{
+    background-color: #dc7f05;
+}
+.onSave{
+    background-color: #34dc05;
 }
 
 .checkbox{
