@@ -16,6 +16,19 @@ export default function TaskList() {
     }
     )
   }
+
+  const taskNewValue=(id,editValue)=>{
+    const newTodo = [...todos];
+    newTodo.forEach((todo, index) =>{
+      if (index === id) {
+        todo.name = editValue
+      }
+      setTodos(newTodo)
+      localStorage.setItem('taskStorage', JSON.stringify(newTodo))
+    }
+    )
+  }
+  
   return (
     <ul>
       {
@@ -24,7 +37,8 @@ export default function TaskList() {
             todo={todo}
             key={index}
             id={index}
-            taskComplete={taskComplete} />
+            taskComplete={taskComplete}
+            taskNewValue={taskNewValue} />
         ))
 
       }
