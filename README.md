@@ -8,7 +8,9 @@ You can find a live demo of the Task Management App [here]( ).
 
 ## Screenshots
 
-![Task Management App](./screenshots/app-screenshot.png)
+![Task Management App](https://github.com/Divyanshu1020/Task-Management-App/assets/97149795/0ad94c7d-14de-4b15-b3a9-e6e7337e1911)
+![Screenshot (34)](https://github.com/Divyanshu1020/Task-Management-App/assets/97149795/34f7b479-57bc-4212-869a-28770e7207bd)
+
 
 ## Features
 
