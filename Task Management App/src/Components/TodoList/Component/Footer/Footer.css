@@ -1,0 +1,19 @@
+.row{
+
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ margin: 20px 0;
+}
+.checkbox{
+    margin-right: 5px;
+}
+
+.row button {
+    text-align: center;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: #dc0505;
+}
