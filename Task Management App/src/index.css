@@ -6,14 +6,36 @@
   font-family: 'fira sana', sans-serif;
 
 }
+body{
+  /* height: 100vh; */
+}
 .App{
   width: 100%;
   max-width: 500px;
   max-height: 650px;
-  height: 100vh;
+  /* height: 100vh; */
   margin: 50px auto;
   border: 1px solid black;
   box-shadow: 0 2px 6px #555;
   padding: 50px;
+  overflow: hidden;
+  
 
+}
+
+.container{
+  max-height: 630px;
+  overflow: hidden;
+}
+
+
+@media screen and (max-width: 600px) {
+  .App{
+   
+    height: 100vh;
+    width: 90%;
+    margin: 50px auto;
+    max-height: 670px;
+    padding: 20px;
+  }
 }

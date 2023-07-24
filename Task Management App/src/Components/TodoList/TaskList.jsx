@@ -1,6 +1,7 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import Task from './Component/Task/Task'
 import { DataContext } from './DataProvider/DataProvider'
+import "./TaskList.css"
 
 
 export default function TaskList() {
@@ -49,7 +50,7 @@ export default function TaskList() {
     updateLocalStorage(newTodo)
   }
   return (
-    <ul>
+    <ul className='tasks-list'>
       {
         todos.map((todo, index) => (
           <Task
@@ -64,5 +65,6 @@ export default function TaskList() {
 
       }
     </ul>
+    
   )
 }

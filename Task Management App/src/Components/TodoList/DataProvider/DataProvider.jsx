@@ -4,11 +4,11 @@ export const DataContext = createContext();
 
 export const DataProvider = (props) => {
   const [todos, setTodos] = useState([]);
-  useEffect(()=>{
-    const taskStorage = JSON.parse(localStorage.getItem('taskStorage'));
-    console.log(taskStorage);
-    setTodos(taskStorage)
-  },[])
+  // useEffect(()=>{
+  //   const taskStorage = JSON.parse(localStorage.getItem('taskStorage'));
+  //   console.log(taskStorage);
+  //   setTodos(taskStorage)
+  // },[])
 
 
 

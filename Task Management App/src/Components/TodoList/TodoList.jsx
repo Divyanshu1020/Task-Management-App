@@ -9,7 +9,7 @@ import TaskList from './TaskList'
 export default function TodoList() {
   return (
     <DataProvider>
-      <div>
+      <div className="container">
         <Header />
         <TaskList />
         <Footer></Footer>

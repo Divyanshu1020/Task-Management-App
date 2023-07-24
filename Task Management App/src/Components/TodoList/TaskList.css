@@ -1,0 +1,12 @@
+.tasks-list{
+    min-height: 230px;
+    max-height: 231px;
+    overflow: auto;
+}
+@media screen and (max-width: 600px) {
+    .tasks-list{
+        min-height: 465px;
+        max-height: 466px;
+        overflow: auto;
+    }
+  }
