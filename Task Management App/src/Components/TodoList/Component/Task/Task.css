@@ -1,13 +1,26 @@
 li{
     list-style: none;
-    margin: 10px 0;
+    margin: 1px 0;
     display: flex;
     justify-content: space-between;
-    border: 1px solid #ccc ;
+    color: white;
     padding: 10px;
     align-items: center;
     text-transform: capitalize;
+    background-color: var(--task-color-3);
 
+}
+
+#editInput{
+   height: 26px;
+   outline: none;
+   border: none;
+   background: transparent;
+   font-weight: 500;
+   font-size: 16px;
+   text-transform: capitalize;
+   padding-left: 18px;
+   color: var(--button-color-1) ;
 }
 
 li .active{
@@ -16,23 +29,30 @@ li .active{
 
 }
 li .delete{
-    background-color: #dc0505;
+    background-color: white;
+    border-color: var(--button-color-4);
+    color: var(--button-color-4);
     letter-spacing: 0;
 }
 
 li button {
-    border: none;
-    color: white;
+    border: 1px solid;
+    border-radius: 25px;
+    
+    background-color: white;
     letter-spacing: 2px;
     cursor: pointer;
     padding: 5px 10px;
     width: 60px;
 }
 .onEdit{
-    background-color: #dc7f05;
+    /* background-color: #dc7f05; */
+    border-color: var(--button-color-2);
+    color: var(--button-color-2);
 }
 .onSave{
-    background-color: #34dc05;
+    color: var(--button-color-3);
+    border-color: var(--button-color-3);
 }
 
 .checkbox{

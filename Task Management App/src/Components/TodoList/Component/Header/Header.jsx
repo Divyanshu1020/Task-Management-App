@@ -16,8 +16,8 @@ export default function Header() {
   }
   return (
     <div>
-      <header>
-        <h1> My Task</h1>
+      <header className="Header-container">
+        <h1 className="Header"> My Task</h1>
         <form id="new-task" onSubmit={addData}>
           <input
             id="new-task-input"
@@ -27,7 +27,7 @@ export default function Header() {
             value={task}
             onChange={e => setTask(e.target.value)}
           />
-          <button type="submit" disabled={!task}>Create</button>
+          <button className="submit" type="submit" disabled={!task}>Add Task</button>
         </form>
       </header>
     </div>

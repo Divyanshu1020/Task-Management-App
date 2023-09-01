@@ -1,3 +1,23 @@
+:root {
+   /* Background color */
+  --bg-color-1 : #121212;
+  --bg-color-2 : #333333;
+  --container-bg-1 : #2B2B32;
+  --container-bg-2 : #444444;
+  --task-color-1 : #5C38BF;
+  --task-coloe-2 : #6845d8;
+  --task-color-3 : #444444;
+  --button-color-1: #FF339D;
+  --button-color-2 : #ff9901;
+  --button-color-3 : #8cad65;
+  --button-color-4 : red;
+  --search-button : #343b3d;
+ 
+   /* Header */
+   --top-header-color : #ffffff;
+}
+
+
 *{
   margin: 0;
   padding: 0;
@@ -7,35 +27,54 @@
 
 }
 body{
-  /* height: 100vh; */
+  background-color: var(--container-bg-1);
+  /* background-color: var(--bg-color) */
 }
 .App{
+  background-color: var(--bg-color-1);
+  /* background-color: var(--container-bg); */
   width: 100%;
   max-width: 500px;
-  max-height: 650px;
+  /* min-height: 550px; */
   /* height: 100vh; */
   margin: 50px auto;
   border: 1px solid black;
-  box-shadow: 0 2px 6px #555;
-  padding: 50px;
+  border-radius: 5%;
+  box-shadow: 0 2px 40px #555;
+  padding: 10px;
   overflow: hidden;
-  
 
 }
-
 .container{
-  max-height: 630px;
-  overflow: hidden;
+  /* min-height: 530px; */
+  display: flex;
+  flex-direction: column;
 }
+
+/* .container:last-child{
+  margin-top: auto;
+} */
+
+
 
 
 @media screen and (max-width: 600px) {
   .App{
    
     height: 100vh;
-    width: 90%;
-    margin: 50px auto;
-    max-height: 670px;
+    margin: 0;
     padding: 20px;
+    border-radius: 0;
+    
+    
+   
+
+  }
+ 
+  .container{
+    display: flex;
+    min-height: 530px;
+    flex-direction: column;
+    margin-top: 30px;
   }
 }

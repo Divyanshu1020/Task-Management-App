@@ -1,12 +1,22 @@
 .tasks-list{
-    min-height: 230px;
-    max-height: 231px;
+   
+    max-height: 350px;
     overflow: auto;
+
+    border-radius: 20px;
+}
+
+.tasks-list::-webkit-scrollbar{
+    display: none;
 }
 @media screen and (max-width: 600px) {
     .tasks-list{
-        min-height: 465px;
-        max-height: 466px;
+        /* max-height: 480px; */
+
+        min-height: 580px;
         overflow: auto;
+        margin-bottom: 20px;
+
+        border-radius: 20px;
     }
   }
