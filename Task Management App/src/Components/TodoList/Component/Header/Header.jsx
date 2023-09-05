@@ -1,19 +1,38 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { DataContext } from "../../DataProvider/DataProvider";
 import "./Header.css";
+
+import { addDoc, collection } from "firebase/firestore";
+import { auth, db } from "../../../../config/firebase";
+import { async } from "@firebase/util";
 
 
 export default function Header() {
   const [todos, setTodos] = useContext(DataContext);
   const [task, setTask] = useState("")
 
-  const addData = (e) => {
+  const userId = String(auth.currentUser?.uid)
+
+  
+  
+
+
+
+
+  const addData = async (e) => {
     e.preventDefault();
-    const newTodoAdd = [...todos, { name: task, complete: false }]
-    setTodos(newTodoAdd)
-    localStorage.setItem('taskStorage', JSON.stringify(newTodoAdd))
-    setTask("")
+    // const newTodoAdd = [...todos, { name: task, complete: false }]
+    // setTodos(newTodoAdd)
+    await addDoc(collection(db, userId), {
+      todo: task,
+      complete: false
+    })
+    // console.log("Result",result);
+
   }
+
+
+
   return (
     <div>
       <header className="Header-container">
@@ -28,8 +47,11 @@ export default function Header() {
             onChange={e => setTask(e.target.value)}
           />
           <button className="submit" type="submit" disabled={!task}>Add Task</button>
+
         </form>
+
       </header>
+
     </div>
   );
 }

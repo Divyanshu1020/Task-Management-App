@@ -4,6 +4,7 @@ import { DataContext } from './DataProvider/DataProvider'
 import "./TaskList.css"
 
 
+
 export default function TaskList() {
   const [todos, setTodos] = useContext(DataContext)
 
@@ -29,7 +30,7 @@ export default function TaskList() {
     const newTodo = [...todos];
     newTodo.forEach((todo, index) =>{
       if (index === id) {
-        todo.name = editValue
+        todo.todo = editValue
       }
       setTodos(newTodo)
       updateLocalStorage(newTodo)
@@ -49,8 +50,13 @@ export default function TaskList() {
     setTodos(newTodo)
     updateLocalStorage(newTodo)
   }
+
+
+ 
   return (
     <ul className='tasks-list'>
+
+      
       {
         todos.map((todo, index) => (
           <Task

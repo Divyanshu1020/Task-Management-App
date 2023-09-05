@@ -3,13 +3,13 @@ import './Task.css'
 
 export default function Task({ todo, id,taskComplete, taskNewValue,deleteFunction }) {
     const[editButtonOn ,setEditButtonOn] = useState(false)  
-    const[editValue, setEditValue] = useState(todo.name)
+    const[editValue, setEditValue] = useState(todo.todo)
     // When you click on save button this function run 
     const saveButtonHandler=(id)=>{
         if(editValue){
             taskNewValue(id,editValue);
         }else{
-            setEditValue(todo.name)
+            setEditValue(todo.todo)
         }
         setEditButtonOn(false)
     }
@@ -47,7 +47,7 @@ export default function Task({ todo, id,taskComplete, taskNewValue,deleteFunctio
                     checked={todo.complete}
                     onChange={() => taskComplete(id)} // taskComplete come as a prop
                 />
-                {todo.name}
+                {todo.todo}
             </label>
             <button 
                 className={todo.complete ? "delete" : "onEdit"}  
