@@ -1,14 +1,13 @@
-import React, { useContext, useState, useEffect } from "react";
-import { DataContext } from "../../DataProvider/DataProvider";
+import React, { useState } from "react";
 import "./Header.css";
 
-import { addDoc, collection } from "firebase/firestore";
-import { auth, db } from "../../../../config/firebase";
-import { async } from "@firebase/util";
+
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import {  auth, db } from "../../../../config/firebase";
+
 
 
 export default function Header() {
-  const [todos, setTodos] = useContext(DataContext);
   const [task, setTask] = useState("")
 
   const userId = String(auth.currentUser?.uid)
@@ -25,7 +24,8 @@ export default function Header() {
     // setTodos(newTodoAdd)
     await addDoc(collection(db, userId), {
       todo: task,
-      complete: false
+      complete: false,
+      time : serverTimestamp()
     })
     // console.log("Result",result);
 

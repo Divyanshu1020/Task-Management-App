@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './Task.css'
 
+
 export default function Task({ todo, id,taskComplete, taskNewValue,deleteFunction }) {
     const[editButtonOn ,setEditButtonOn] = useState(false)  
     const[editValue, setEditValue] = useState(todo.todo)
@@ -24,7 +25,7 @@ export default function Task({ todo, id,taskComplete, taskNewValue,deleteFunctio
     if (editButtonOn) {
          // If edit button is ON than this function is run and edit functionlity OPEN
         return (
-            <li>
+            <li >
                 <input
                     type="text"
                     id="editInput"
@@ -37,7 +38,7 @@ export default function Task({ todo, id,taskComplete, taskNewValue,deleteFunctio
         )
     }
     return (
-        <li>
+        <li >
             <label htmlFor={id} className={todo.complete ? "active" : ""}>
 
                 <input

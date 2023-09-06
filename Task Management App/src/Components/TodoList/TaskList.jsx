@@ -2,11 +2,15 @@ import React, { useContext } from 'react'
 import Task from './Component/Task/Task'
 import { DataContext } from './DataProvider/DataProvider'
 import "./TaskList.css"
+import TodolistLoadingSkeleton from '../Loading Skeleton/Todolist Loading Skeleton/TodolistLoadingSkeleton'
+import Th from '../Loading Skeleton/Th'
 
 
 
 export default function TaskList() {
-  const [todos, setTodos] = useContext(DataContext)
+  const {todos, setTodos} = useContext(DataContext)
+  const {isLoading} = useContext(DataContext)
+  console.log(isLoading);
 
   const updateLocalStorage=(newValue)=>{
     localStorage.setItem('taskStorage', JSON.stringify(newValue))
@@ -55,10 +59,25 @@ export default function TaskList() {
  
   return (
     <ul className='tasks-list'>
-
-      
-      {
-        todos.map((todo, index) => (
+      { isLoading ?(
+        <>
+        <TodolistLoadingSkeleton/>
+        <TodolistLoadingSkeleton/>
+        <TodolistLoadingSkeleton/>
+        <TodolistLoadingSkeleton/>
+        <TodolistLoadingSkeleton/>
+        <TodolistLoadingSkeleton/>
+        <TodolistLoadingSkeleton/>
+        <TodolistLoadingSkeleton/>
+        <TodolistLoadingSkeleton/>
+        <TodolistLoadingSkeleton/>
+        <TodolistLoadingSkeleton/>
+        <TodolistLoadingSkeleton/>
+        <TodolistLoadingSkeleton/>
+        <TodolistLoadingSkeleton/>
+        </>) : (
+        
+          todos.map((todo, index) => (
           <Task
             todo={todo}
             key={index}
@@ -68,8 +87,13 @@ export default function TaskList() {
             deleteFunction={deleteFunction}
              />
         ))
-
+        )
       }
+      
+      
+      
+
+      
     </ul>
     
   )
