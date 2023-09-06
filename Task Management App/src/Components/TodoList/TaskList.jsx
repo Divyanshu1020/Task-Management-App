@@ -3,7 +3,7 @@ import Task from './Component/Task/Task'
 import { DataContext } from './DataProvider/DataProvider'
 import "./TaskList.css"
 import TodolistLoadingSkeleton from '../Loading Skeleton/Todolist Loading Skeleton/TodolistLoadingSkeleton'
-import Th from '../Loading Skeleton/Th'
+
 
 
 

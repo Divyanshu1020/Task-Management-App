@@ -3,7 +3,7 @@ import Footer from './Component/Footer/Footer'
 import Header from './Component/Header/Header'
 import { DataProvider } from "./DataProvider/DataProvider";
 import TaskList from './TaskList'
-import { auth } from "../../config/firebase";
+import { auth } from "../../Firebase/firebase";
 import { useNavigate } from "react-router-dom";
 
 

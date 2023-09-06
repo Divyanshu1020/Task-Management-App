@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Footer.css"
-import { auth } from '../../../../config/firebase'
+import { auth } from '../../../../Firebase/firebase'
 import { signOut } from 'firebase/auth'
 import {  useNavigate } from 'react-router-dom'
 
